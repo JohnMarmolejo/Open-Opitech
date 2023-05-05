@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="form-group">
+      <label for="username-filter">Username: &nbsp;</label>
+      <select id="username-filter" (change)="filterData($event.target.value, 'username')">
+        <option value="">All</option>
+        <option *ngFor="let item of jsonData" [value]="item.username">{{ item.username }}</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="priority-filter">Priority:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <select id="priority-filter" (change)="filterData($event.target.value, 'priority')">
+        <option value="">All</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="status-filter">Status:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <select id="status-filter" (change)="filterData($event.target.value, 'status')">
+        <option value="">All</option>
+        <option value="open">Open</option>
+        <option value="closed">Closed</option>
+        <option value="in progress">In Progress</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="customer-satisfaction-filter">Customer satisfaction:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <select id="customer-satisfaction-filter" (change)="filterData($event.target.value, 'customerSatisfaction')">
+        <option value="">All</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+        <label for="subject-filter">Subject:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <select id="subject-filter" (change)="filterData($event.target.value, 'subject')">
+          <option value="">All</option>
+          <option *ngFor="let item of jsonData" [value]="item.subject">{{ item.subject }}</option>
+        </select>
+      </div>
+  
+  </div>
+  
+<br>
+<button type="button" (click)="resetFilters()">Reset</button>
+<br>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Subject</th>
+            <th>Customer Satisfaction</th>
+            <th>Priority</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of filteredItems">
+            <td>{{ item.username }}</td>
+            <td>{{ item.subject }}</td>
+            <td>{{ item.customerSatisfaction }}</td>
+            <td>{{ item.priority }}</td>
+            <td>{{ item.status }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+------------------------ Front ------------------------------
+Para desarrollar el front primero opte por organizar un html base en la app principal,
+de ahi agregue el componente table con el fin de insertar la tabla sin necesidad de
+mo dificar de manera constante el html central, luego de definir diferentes parametros
+en los archivos de la pagina, primeramente opte por realizar el sistema de visualizacion
+y filtros con una "base de datos" interna (agregue un arreglo con las variables) con el
+fin de tener una base para probar funciones y demas, luego de concretar los filtros y
+comprobar que funcionaran, inicie con la conexion del archivo Json para emular una
+conexion con base de datos externa, luego de lograr extraer datos del Json, incorpore un
+boton para reiniciar filtros y agregue varios datos repetidos en el Json con el fin de
+que los filtros muestren todos los input y comprobarlos.
+Me encontre con un obstaculo y fue el filtro dinamico o el boton dinamico que me 
+generaba los filtros y colocaba solo uno o dos dependiendo de la necesidad, sin embargo
+una solucion rapida fue organizar los filtros de manera que fueran efectivos y utiles
+a la hora de realizar la accion.
+
+------------------------ Back  ------------------------------
+Para el back plantee un pseudocodigo sencillo con el cual se demuestra una manera de 
+realizacion del codigo para un programa de dichas especificaciones, es decir, implemente
+una estructura sencilla iniciando por la creacion de clases extraidas a partir de los enunciados
+enliste algunas de las posibles funciones las cuales podrian implementarse debido a la naturaleza
+del aplicativo y algunos ejemplos del uso de las funciones, adicional anexe una estructura base
+de como crear una base de datos que cumpla con las variables propuestas por el problema y procedi 
+a realizar las diferentes ordenes para realizar las consultas en la base de datos.

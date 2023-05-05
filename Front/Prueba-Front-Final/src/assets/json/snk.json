@@ -1,0 +1,80 @@
+[
+  {
+    "username": "John Doe",
+    "subject": "Issue with product",
+    "customerSatisfaction": 4,
+    "priority": "high",
+    "status": "open"
+  },
+  {
+    "username": "John Doe",
+    "subject": "Issue with account",
+    "customerSatisfaction": 3,
+    "priority": "medium",
+    "status": "open"
+  },
+  {
+    "username": "Jane Smith",
+    "subject": "Billing inquiry",
+    "customerSatisfaction": 3,
+    "priority": "medium",
+    "status": "closed"
+  },
+  {
+    "username": "Bob Johnson",
+    "subject": "Technical support needed",
+    "customerSatisfaction": 5,
+    "priority": "low",
+    "status": "open"
+  },
+  {
+    "username": "Alice Green",
+    "subject": "Product feature request",
+    "customerSatisfaction": 2,
+    "priority": "high",
+    "status": "in progress"
+  },
+  {
+    "username": "Tom Brown",
+    "subject": "Complaint about service",
+    "customerSatisfaction": 1,
+    "priority": "low",
+    "status": "closed"
+  },
+  {
+    "username": "Sarah Lee",
+    "subject": "Website bug report",
+    "customerSatisfaction": 4,
+    "priority": "high",
+    "status": "in progress"
+  },
+  {
+    "username": "Jack Black",
+    "subject": "Product usability feedback",
+    "customerSatisfaction": 3,
+    "priority": "medium",
+    "status": "open"
+  },
+  {
+    "username": "Karen White",
+    "subject": "Technical issue with software",
+    "customerSatisfaction": 5,
+    "priority": "low",
+    "status": "open"
+  },
+  {
+    "username": "Mike Johnson",
+    "subject": "Feature request for mobile app",
+    "customerSatisfaction": 2,
+    "priority": "high",
+    "status": "closed"
+  },
+  {
+    "username": "Karen White",
+    "subject": "Website bug report",
+    "customerSatisfaction": 5,
+    "priority": "high",
+    "status": "in progress"
+  }
+]
+ 

@@ -1,0 +1,119 @@
+// Este es un pseudocodigo no funcional de como podria implementarse un aplicativo de gestion de viajes 
+
+
+// Definición de clases 
+class Cliente {
+    String nombre
+    String telefono
+    String correo
+}
+
+class Viaje {
+    String destino
+    double precio
+    Date fechaDisponible
+}
+
+// Funciones de la aplicación
+// Obtener lista de viajes disponibles y mostrarla
+function mostrarOpcionesDeViajes() {
+   
+}
+// Crear una nueva reserva y guardarla en la base de datos
+function hacerReserva(Cliente cliente, Viaje viaje, Date fechaReserva) {
+    
+}
+
+// Crear una nueva compra y guardarla en la base de datos
+function hacerCompra(Cliente cliente, List<Viaje> viajesComprados, Date fechaCompra) {    
+}
+
+// Ejemplo de uso de las funciones
+Cliente nuevoCliente = new Cliente()
+nuevoCliente.nombre = "John Marmolejo"
+nuevoCliente.telefono = "316-389-6242"
+nuevoCliente.correo = "marmolejovv@gmail.com"
+
+mostrarOpcionesDeViajes()
+
+Viaje viajeSeleccionado = obtenerViajePorDestino("Colombia, Alemania")
+Date fechaReserva = new Date(2023, 6, 15)
+hacerReserva(nuevoCliente, viajeSeleccionado, fechaReserva)
+
+List<Viaje> viajesComprados = new ArrayList<Viaje>()
+viajesComprados.add(viajeSeleccionado)
+Date fechaCompra = new Date()
+hacerCompra(nuevoCliente, viajesComprados, fechaCompra)
+
+
+//----------------------------- Fin del pseudocodigo ---------------------------------------
+//----------------------------- Sentencias de Sql ------------------------------------------
+
+//----------------------------- BD de ejemplo para las sentencias --------------------------
+CREATE TABLE clientes (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(50),
+    telefono VARCHAR(20),
+    correo VARCHAR(50),
+    ciudad VARCHAR(50),
+    edad INT
+);
+CREATE TABLE viajes (
+    id INT PRIMARY KEY,
+    tipo_viaje VARCHAR(50),
+    destino VARCHAR(50),
+    precio FLOAT,
+    fecha_disponible DATE,
+    estado VARCHAR(20)
+);
+CREATE TABLE reservas (
+    id INT PRIMARY KEY,
+    cliente_id INT,
+    viaje_id INT,
+    fecha_reserva DATE,
+    precio FLOAT,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
+    FOREIGN KEY (viaje_id) REFERENCES viajes(id)
+);
+CREATE TABLE compras (
+    id INT PRIMARY KEY,
+    cliente_id INT,
+    fecha_compra DATE,
+    metodo_pago VARCHAR(20),
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+);
+//----------------------------- Sentecias de consulta para SQL --------------------------
+
+// -- a --
+SELECT COUNT(DISTINCT cliente_id) AS numero_personas
+FROM reservas
+WHERE precio > 5000000;
+
+// -- b --
+SELECT *
+FROM clientes
+WHERE id IN (
+    SELECT cliente_id
+    FROM compras
+    WHERE metodo_pago = 'Efectivo'
+);
+// -- c --
+SELECT *
+FROM clientes
+WHERE edad > 40 AND ciudad = 'Bogotá';
+
+// -- d --
+SELECT DISTINCT tipo_viaje
+FROM viajes
+WHERE id IN (
+    SELECT viaje_id
+    FROM compras
+    WHERE metodo_pago = 'Tarjeta de crédito'
+);
+
+// -- e --
+SELECT *
+FROM viajes
+WHERE estado = 'Activo' OR estado = 'Cancelado';
+
+//----------------------------- Fin sentencias de Sql ------------------------------------------
